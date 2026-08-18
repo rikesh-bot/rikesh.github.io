@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GuitarHub | Premium Guitar Store</title>
+    <title>GuitarHub - Guitar Store</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
             background: #f5f5f5;
             color: #222;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* ================= NAVBAR ================= */
-
+        /* NAVBAR */
         nav {
             background: #111;
             color: white;
@@ -40,12 +33,9 @@
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
-        }
-
-        .logo span {
-            color: #e63946;
+            color: #ff7a00;
         }
 
         nav ul {
@@ -57,193 +47,130 @@
         nav a {
             color: white;
             text-decoration: none;
+            font-size: 16px;
         }
 
         nav a:hover {
-            color: #e63946;
+            color: #ff7a00;
         }
 
-        /* ================= HERO ================= */
-
+        /* HERO */
         .hero {
             min-height: 500px;
             background:
-                linear-gradient(
-                    rgba(0,0,0,0.7),
-                    rgba(0,0,0,0.7)
-                ),
-                url("https://commons.wikimedia.org/wiki/Special:FilePath/Gibson_Les_Paul_Goldtop%2C_MIM_PHX.jpg");
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+                url("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
 
             display: flex;
-            align-items: center;
             justify-content: center;
-
+            align-items: center;
             text-align: center;
             color: white;
-            padding: 40px;
+            padding: 30px;
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-size: 60px;
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
-            color: #e63946;
-        }
-
-        .hero p {
+        .hero-content p {
             font-size: 20px;
-            max-width: 700px;
-            margin: auto;
-            color: #ddd;
+            margin-bottom: 25px;
         }
 
-        .hero-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: #e63946;
+        .hero-btn {
+            background: #ff7a00;
             color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
+            display: inline-block;
         }
 
-        .hero-button:hover {
-            background: #c1121f;
+        .hero-btn:hover {
+            background: #ff9500;
         }
 
-        /* ================= BRANDS ================= */
-
+        /* SECTION */
         .section {
-            padding: 70px 7%;
+            padding: 60px 7%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
             margin-bottom: 40px;
         }
 
+        .section-title h2 {
+            font-size: 36px;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        /* BRAND BUTTONS */
         .brands {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(150px, 1fr));
-
-            gap: 20px;
-        }
-
-        .brand-button {
-            border: none;
-            background: white;
-            padding: 25px 15px;
-            border-radius: 12px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.08);
-
-            transition: 0.3s;
-        }
-
-        .brand-button:hover {
-            transform: translateY(-5px);
-            background: #111;
-            color: white;
-        }
-
-        .brand-button.active {
-            background: #e63946;
-            color: white;
-        }
-
-        /* ================= SHOP ================= */
-
-        .shop {
-            background: #eeeeee;
-        }
-
-        .shop-controls {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
             flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
         }
 
-        #searchBox {
-            width: 350px;
-            max-width: 90%;
-
-            padding: 14px 18px;
-
-            border: 1px solid #ccc;
-            border-radius: 8px;
-
-            font-size: 16px;
+        .brand-btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 25px;
+            background: #222;
+            color: white;
+            cursor: pointer;
         }
 
-        /* ================= PRODUCTS ================= */
+        .brand-btn:hover {
+            background: #ff7a00;
+        }
 
+        /* PRODUCTS */
         .products {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .product {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.08);
-
-            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+            transition: .3s;
         }
 
         .product:hover {
             transform: translateY(-8px);
-
-            box-shadow:
-                0 12px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,.18);
         }
 
-        .product-image {
+        .product img {
             width: 100%;
             height: 280px;
+            object-fit: cover;
+        }
 
-            object-fit: contain;
-
-            background: #fafafa;
-
+        .product-info {
             padding: 20px;
         }
 
-        .product-content {
-            padding: 22px;
-        }
-
-        .brand-name {
-            color: #e63946;
+        .brand {
+            color: #ff7a00;
             font-size: 14px;
             font-weight: bold;
-            text-transform: uppercase;
         }
 
         .product h3 {
@@ -251,256 +178,148 @@
             font-size: 21px;
         }
 
-        .description {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-            min-height: 45px;
+        .level {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: #eee;
+            font-size: 12px;
+            margin: 5px 0;
         }
 
         .price {
-            font-size: 23px;
+            font-size: 22px;
             font-weight: bold;
-            margin: 18px 0;
+            margin: 12px 0;
         }
 
-        .view-button {
+        .buy-btn {
             width: 100%;
             padding: 12px;
-
             border: none;
-            border-radius: 7px;
-
+            border-radius: 8px;
             background: #111;
             color: white;
-
             cursor: pointer;
-            font-weight: bold;
+            font-size: 15px;
         }
 
-        .view-button:hover {
-            background: #e63946;
+        .buy-btn:hover {
+            background: #ff7a00;
         }
 
-        /* ================= ABOUT ================= */
+        /* LEVEL SECTION */
+        .levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
 
-        .about {
+        .level-card {
             background: white;
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
         }
 
-        .about-text {
-            max-width: 800px;
-            margin: auto;
-
-            color: #555;
-            line-height: 1.8;
+        .level-card .icon {
+            font-size: 50px;
         }
 
-        /* ================= CONTACT ================= */
+        .level-card h3 {
+            margin: 15px 0 10px;
+        }
 
-        .contact {
+        .level-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ABOUT */
+        .about {
             background: #111;
             color: white;
             text-align: center;
         }
 
-        .contact p {
-            margin: 10px;
-            color: #ddd;
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+            color: #ccc;
         }
 
-        .contact-button {
-            display: inline-block;
-            margin-top: 20px;
-
-            padding: 14px 25px;
-
-            background: #e63946;
-            color: white;
-
-            text-decoration: none;
-            border-radius: 7px;
-        }
-
-        /* ================= FOOTER ================= */
-
+        /* FOOTER */
         footer {
-            background: #080808;
-            color: #aaa;
-
+            background: #050505;
+            color: white;
             text-align: center;
-
             padding: 25px;
         }
 
-        /* ================= MODAL ================= */
-
-        .modal {
-            display: none;
-
+        /* CART */
+        #cartMessage {
             position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background: rgba(0,0,0,0.8);
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 20px;
-
+            right: 20px;
+            bottom: 20px;
+            background: #111;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: none;
             z-index: 2000;
         }
 
-        .modal-content {
-            background: white;
-
-            max-width: 600px;
-            width: 100%;
-
-            border-radius: 15px;
-
-            padding: 30px;
-
-            position: relative;
-
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close {
-            position: absolute;
-
-            top: 15px;
-            right: 20px;
-
-            font-size: 30px;
-
-            cursor: pointer;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: 300px;
-
-            object-fit: contain;
-
-            background: #f5f5f5;
-
-            border-radius: 10px;
-
-            margin-bottom: 20px;
-        }
-
-        .modal h2 {
-            margin-bottom: 10px;
-        }
-
-        .modal-price {
-            font-size: 25px;
-            font-weight: bold;
-            margin: 15px 0;
-            color: #e63946;
-        }
-
-        /* ================= MOBILE ================= */
-
+        /* MOBILE */
         @media(max-width: 700px) {
 
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
             nav ul {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
             }
 
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 40px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .hero {
+                min-height: 400px;
             }
-
-            #searchBox {
-                width: 100%;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================= NAVIGATION ================= -->
+<!-- NAVBAR -->
 
 <nav>
-
-    <div class="logo">
-        Guitar<span>Hub</span>
-    </div>
+    <div class="logo">🎸 GuitarHub</div>
 
     <ul>
-
-        <li>
-            <a href="#home">Home</a>
-        </li>
-
-        <li>
-            <a href="#brands">Brands</a>
-        </li>
-
-        <li>
-            <a href="#shop">Shop</a>
-        </li>
-
-        <li>
-            <a href="#about">About</a>
-        </li>
-
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-
+        <li><a href="#home">Home</a></li>
+        <li><a href="#guitars">Guitars</a></li>
+        <li><a href="#levels">Choose Guitar</a></li>
+        <li><a href="#about">About</a></li>
     </ul>
-
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-    <div>
+    <div class="hero-content">
 
-        <h1>
-            Find Your <span>Perfect Guitar</span>
-        </h1>
+        <h1>Find Your Perfect Guitar</h1>
 
         <p>
-            Explore guitars from some of the world's
-            most respected guitar companies.
+            Discover guitars for beginners, intermediate players
+            and professional musicians.
         </p>
 
-        <a
-            href="#brands"
-            class="hero-button">
-
-            Explore Guitars
-
+        <a href="#guitars" class="hero-btn">
+            Shop Guitars
         </a>
 
     </div>
@@ -508,611 +327,395 @@
 </section>
 
 
-<!-- ================= BRANDS ================= -->
+<!-- GUITARS -->
 
-<section class="section" id="brands">
+<section class="section" id="guitars">
 
-    <h2 class="section-title">
-        Guitar Brands
-    </h2>
+    <div class="section-title">
 
-    <p class="section-subtitle">
-        Choose a guitar company to explore its guitars.
-    </p>
+        <h2>🔥 Popular Guitars</h2>
 
+        <p>
+            Choose from some of the most popular guitar brands.
+        </p>
+
+    </div>
+
+
+    <!-- BRANDS -->
 
     <div class="brands">
 
-        <button
-            class="brand-button active"
-            onclick="filterBrand('All', this)">
-
+        <button class="brand-btn" onclick="filterBrand('all')">
             All
-
         </button>
 
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('Gibson', this)">
-
+        <button class="brand-btn" onclick="filterBrand('Gibson')">
             Gibson
-
         </button>
 
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('Fender', this)">
-
+        <button class="brand-btn" onclick="filterBrand('Fender')">
             Fender
-
         </button>
 
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('Ibanez', this)">
-
-            Ibanez
-
-        </button>
-
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('Yamaha', this)">
-
+        <button class="brand-btn" onclick="filterBrand('Yamaha')">
             Yamaha
-
         </button>
 
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('PRS', this)">
-
-            PRS
-
+        <button class="brand-btn" onclick="filterBrand('Ibanez')">
+            Ibanez
         </button>
 
-
-        <button
-            class="brand-button"
-            onclick="filterBrand('Epiphone', this)">
-
-            Epiphone
-
+        <button class="brand-btn" onclick="filterBrand('Taylor')">
+            Taylor
         </button>
+
+    </div>
+
+
+    <!-- PRODUCT GRID -->
+
+    <div class="products">
+
+
+        <!-- GIBSON -->
+
+        <div class="product" data-brand="Gibson">
+
+            <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">GIBSON</span>
+
+                <h3>Gibson Les Paul Standard</h3>
+
+                <span class="level">
+                    Advanced
+                </span>
+
+                <div class="price">
+                    $2,799
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Gibson Les Paul Standard')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FENDER -->
+
+        <div class="product" data-brand="Fender">
+
+            <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">FENDER</span>
+
+                <h3>Fender Player Stratocaster</h3>
+
+                <span class="level">
+                    Intermediate
+                </span>
+
+                <div class="price">
+                    $899
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Fender Player Stratocaster')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- YAMAHA -->
+
+        <div class="product" data-brand="Yamaha">
+
+            <img src="https://images.unsplash.com/photo-1588449668365-d15e397f6787?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">YAMAHA</span>
+
+                <h3>Yamaha FG800</h3>
+
+                <span class="level">
+                    Beginner
+                </span>
+
+                <div class="price">
+                    $229
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Yamaha FG800')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- IBANEZ -->
+
+        <div class="product" data-brand="Ibanez">
+
+            <img src="https://images.unsplash.com/photo-1605020420620-20c943cc4669?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">IBANEZ</span>
+
+                <h3>Ibanez RG550</h3>
+
+                <span class="level">
+                    Advanced
+                </span>
+
+                <div class="price">
+                    $999
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Ibanez RG550')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TAYLOR -->
+
+        <div class="product" data-brand="Taylor">
+
+            <img src="https://images.unsplash.com/photo-1601959322712-5d1b6a0f2a35?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">TAYLOR</span>
+
+                <h3>Taylor Academy 10</h3>
+
+                <span class="level">
+                    Beginner
+                </span>
+
+                <div class="price">
+                    $699
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Taylor Academy 10')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FENDER -->
+
+        <div class="product" data-brand="Fender">
+
+            <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <span class="brand">FENDER</span>
+
+                <h3>Fender Telecaster</h3>
+
+                <span class="level">
+                    Intermediate
+                </span>
+
+                <div class="price">
+                    $999
+                </div>
+
+                <button class="buy-btn"
+                    onclick="addCart('Fender Telecaster')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= SHOP ================= -->
+<!-- GUITAR LEVELS -->
 
-<section class="section shop" id="shop">
+<section class="section" id="levels">
 
-    <h2 class="section-title">
-        Guitar Collection
-    </h2>
+    <div class="section-title">
 
-    <p class="section-subtitle">
-        Browse our collection and find your next guitar.
-    </p>
+        <h2>🎸 Choose Your Guitar</h2>
 
-
-    <div class="shop-controls">
-
-        <input
-            type="text"
-            id="searchBox"
-            placeholder="Search guitar name..."
-            onkeyup="searchProducts()">
+        <p>
+            Not sure which guitar is right for you?
+        </p>
 
     </div>
 
 
-    <div
-        class="products"
-        id="productContainer">
+    <div class="levels">
+
+
+        <div class="level-card">
+
+            <div class="icon">🌱</div>
+
+            <h3>Beginner</h3>
+
+            <p>
+                Perfect for people who are just starting.
+                Look for comfortable guitars that are easy
+                to play and affordable.
+            </p>
+
+        </div>
+
+
+        <div class="level-card">
+
+            <div class="icon">🔥</div>
+
+            <h3>Intermediate</h3>
+
+            <p>
+                Designed for players who already know the basics
+                and want better sound, quality and performance.
+            </p>
+
+        </div>
+
+
+        <div class="level-card">
+
+            <div class="icon">🏆</div>
+
+            <h3>Advanced</h3>
+
+            <p>
+                Professional-quality guitars for experienced
+                musicians, performers and recording artists.
+            </p>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
 
 <section class="section about" id="about">
 
-    <h2 class="section-title">
-        About GuitarHub
-    </h2>
+    <div class="section-title">
 
-    <p class="about-text">
+        <h2>About GuitarHub</h2>
 
-        GuitarHub is a guitar marketplace concept
-        designed for guitar players who want to
-        discover instruments from leading brands.
+    </div>
 
-        Browse different guitar companies,
-        compare models, view prices and find
-        the instrument that fits your style.
-
+    <p>
+        GuitarHub is a modern online guitar store where musicians
+        can discover guitars from popular brands. Whether you are
+        buying your first guitar or upgrading to a professional
+        instrument, GuitarHub helps you find the right guitar
+        for your playing level and budget.
     </p>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
-
-<section class="section contact" id="contact">
-
-    <h2 class="section-title">
-        Contact GuitarHub
-    </h2>
-
-    <p>
-        📍 Khairahani, Parsa
-    </p>
-
-    <p>
-        📧 learnwithpro67@gmail.com
-    </p>
-
-    <a
-        class="contact-button"
-        href="mailto:learnwithpro67@gmail.com">
-
-        Contact Us
-
-    </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
     <p>
-        © 2026 GuitarHub. All Rights Reserved.
-    </p>
-
-    <p>
-        Built for guitar lovers 🎸
+        © 2026 GuitarHub | Your Music. Your Guitar. Your Sound.
     </p>
 
 </footer>
 
 
-<!-- ================= PRODUCT MODAL ================= -->
+<!-- CART MESSAGE -->
 
-<div
-    class="modal"
-    id="productModal">
-
-    <div class="modal-content">
-
-        <span
-            class="close"
-            onclick="closeModal()">
-
-            ×
-
-        </span>
-
-        <img
-            id="modalImage"
-            class="modal-image"
-            src=""
-            alt="Guitar">
-
-        <h2 id="modalName">
-        </h2>
-
-        <p id="modalBrand">
-        </p>
-
-        <p
-            id="modalPrice"
-            class="modal-price">
-
-        </p>
-
-        <p id="modalDescription">
-        </p>
-
-    </div>
-
+<div id="cartMessage">
+    🎸 Added to cart!
 </div>
 
 
 <script>
 
+    /* FILTER BY BRAND */
 
-/* ================= GUITAR DATA ================= */
+    function filterBrand(brand) {
 
-const guitars = [
+        const products =
+            document.querySelectorAll(".product");
 
-    {
-        brand: "Gibson",
+        products.forEach(product => {
 
-        name: "Gibson Les Paul Standard 50s P90",
+            if (
+                brand === "all" ||
+                product.dataset.brand === brand
+            ) {
 
-        price: "€2,499",
+                product.style.display = "block";
 
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/462508.jpg",
+            } else {
 
-        description:
-        "Gold Top Les Paul Standard 50s with P-90 pickups, mahogany body and maple top."
-    },
+                product.style.display = "none";
 
-
-    {
-        brand: "Gibson",
-
-        name: "Gibson SG Standard EB",
-
-        price: "€1,549",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/462537.jpg",
-
-        description:
-        "Classic ebony Gibson SG Standard with mahogany body and dual humbuckers."
-    },
-
-
-    {
-        brand: "Fender",
-
-        name: "Fender Player II Strat RW TCB",
-
-        price: "€829",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595242.jpg",
-
-        description:
-        "Player II Stratocaster with rosewood fingerboard and Transparent Cherry Burst finish."
-    },
-
-
-    {
-        brand: "Fender",
-
-        name: "Fender Player II Strat HSS MN ACB",
-
-        price: "€888",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595298.jpg",
-
-        description:
-        "Player II Strat HSS with maple fingerboard and versatile HSS pickup configuration."
-    },
-
-
-    {
-        brand: "Fender",
-
-        name: "Fender Player II Tele MN 3TS",
-
-        price: "€822",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595335.jpg",
-
-        description:
-        "Player II Telecaster in 3-Color Sunburst with maple fingerboard."
-    },
-
-
-    {
-        brand: "Ibanez",
-
-        name: "Ibanez RG550-EB",
-
-        price: "€1,090",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/597454.jpg",
-
-        description:
-        "RG550 electric guitar with basswood body, maple/walnut neck and Edge tremolo."
-    },
-
-
-    {
-        brand: "Yamaha",
-
-        name: "Yamaha Pacifica 012",
-
-        price: "SGD 256",
-
-        image:
-        "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha-Pacifica-012.jpg",
-
-        description:
-        "Affordable Pacifica electric guitar designed as an accessible entry-level instrument."
-    },
-
-
-    {
-        brand: "PRS",
-
-        name: "PRS Custom 24 Faded Whale Blue",
-
-        price: "€4,199",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/634905.jpg",
-
-        description:
-        "Premium PRS Custom 24 with mahogany body, flamed maple top and dual humbuckers."
-    },
-
-
-    {
-        brand: "Epiphone",
-
-        name: "Epiphone Les Paul Standard 50s Goldtop",
-
-        price: "€659",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/632459.jpg",
-
-        description:
-        "Inspired by Gibson Les Paul design with mahogany body, maple top and ProBucker pickups."
-    },
-
-
-    {
-        brand: "Epiphone",
-
-        name: "Epiphone SG Standard Cherry",
-
-        price: "€599",
-
-        image:
-        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/634462.jpg",
-
-        description:
-        "Cherry-finished SG-style guitar with mahogany construction and ProBucker pickups."
-    }
-
-];
-
-
-/* ================= DISPLAY PRODUCTS ================= */
-
-function displayProducts(list) {
-
-    const container =
-        document.getElementById("productContainer");
-
-    container.innerHTML = "";
-
-
-    if (list.length === 0) {
-
-        container.innerHTML = `
-            <p style="
-                grid-column: 1 / -1;
-                text-align:center;
-                font-size:20px;
-                padding:40px;">
-                
-                No guitars found.
-
-            </p>
-        `;
-
-        return;
-    }
-
-
-    list.forEach((guitar, index) => {
-
-        container.innerHTML += `
-
-            <div class="product">
-
-                <img
-                    class="product-image"
-                    src="${guitar.image}"
-                    alt="${guitar.name}">
-
-                <div class="product-content">
-
-                    <div class="brand-name">
-                        ${guitar.brand}
-                    </div>
-
-                    <h3>
-                        ${guitar.name}
-                    </h3>
-
-                    <p class="description">
-                        ${guitar.description}
-                    </p>
-
-                    <div class="price">
-                        ${guitar.price}
-                    </div>
-
-                    <button
-                        class="view-button"
-                        onclick="openModal(${index})">
-
-                        View Details
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        `;
-
-    });
-
-}
-
-
-/* ================= BRAND FILTER ================= */
-
-function filterBrand(brand, button) {
-
-    document
-        .querySelectorAll(".brand-button")
-        .forEach(btn => {
-
-            btn.classList.remove("active");
+            }
 
         });
 
-
-    button.classList.add("active");
-
-
-    if (brand === "All") {
-
-        displayProducts(guitars);
-
-    }
-
-    else {
-
-        const filtered =
-            guitars.filter(
-                guitar => guitar.brand === brand
-            );
-
-        displayProducts(filtered);
-
     }
 
 
-    document
-        .getElementById("shop")
-        .scrollIntoView();
+    /* ADD TO CART */
 
-}
+    function addCart(guitarName) {
 
+        const message =
+            document.getElementById("cartMessage");
 
-/* ================= SEARCH ================= */
+        message.innerHTML =
+            "🎸 " + guitarName + " added to cart!";
 
-function searchProducts() {
+        message.style.display = "block";
 
-    const search =
-        document
-        .getElementById("searchBox")
-        .value
-        .toLowerCase();
+        setTimeout(() => {
 
+            message.style.display = "none";
 
-    const results =
-        guitars.filter(guitar =>
-
-            guitar.name
-            .toLowerCase()
-            .includes(search)
-
-            ||
-
-            guitar.brand
-            .toLowerCase()
-            .includes(search)
-
-        );
-
-
-    displayProducts(results);
-
-}
-
-
-/* ================= MODAL ================= */
-
-function openModal(index) {
-
-    const guitar =
-        guitars[index];
-
-
-    document
-        .getElementById("modalImage")
-        .src = guitar.image;
-
-
-    document
-        .getElementById("modalName")
-        .textContent = guitar.name;
-
-
-    document
-        .getElementById("modalBrand")
-        .textContent =
-        "Brand: " + guitar.brand;
-
-
-    document
-        .getElementById("modalPrice")
-        .textContent =
-        guitar.price;
-
-
-    document
-        .getElementById("modalDescription")
-        .textContent =
-        guitar.description;
-
-
-    document
-        .getElementById("productModal")
-        .style.display = "flex";
-
-}
-
-
-function closeModal() {
-
-    document
-        .getElementById("productModal")
-        .style.display = "none";
-
-}
-
-
-window.onclick = function(event) {
-
-    const modal =
-        document.getElementById("productModal");
-
-
-    if (event.target === modal) {
-
-        closeModal();
+        }, 2500);
 
     }
-
-}
-
-
-/* ================= INITIAL LOAD ================= */
-
-displayProducts(guitars);
-
 
 </script>
 
-
 </body>
-
 </html>
