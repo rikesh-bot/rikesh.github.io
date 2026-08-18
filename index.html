@@ -5,32 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Learn With Pro | Learn. Build. Grow.</title>
+    <title>GuitarHub | Premium Guitar Store</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background: #f7f9fc;
-        }
-
-        /* Navigation */
+        /* ================= NAVBAR ================= */
 
         nav {
-            background: #111827;
+            background: #111;
             color: white;
-            padding: 18px 8%;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,186 +40,377 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
         }
 
         .logo span {
-            color: #38bdf8;
+            color: #e63946;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 25px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: #e63946;
         }
 
-        /* Hero */
+        /* ================= HERO ================= */
 
         .hero {
-            min-height: 85vh;
+            min-height: 500px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.7),
+                    rgba(0,0,0,0.7)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Gibson_Les_Paul_Goldtop%2C_MIM_PHX.jpg");
+
+            background-size: cover;
+            background-position: center;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
             color: white;
+            padding: 40px;
         }
 
         .hero h1 {
-            font-size: 55px;
+            font-size: 60px;
             margin-bottom: 15px;
         }
 
         .hero h1 span {
-            color: #38bdf8;
+            color: #e63946;
         }
 
         .hero p {
             font-size: 20px;
             max-width: 700px;
             margin: auto;
+            color: #ddd;
         }
 
-        .button {
+        .hero-button {
             display: inline-block;
             margin-top: 30px;
-            padding: 14px 28px;
-            background: #38bdf8;
-            color: #082f49;
+            padding: 15px 30px;
+            background: #e63946;
+            color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
         }
 
-        .button:hover {
-            background: white;
+        .hero-button:hover {
+            background: #c1121f;
         }
 
-        /* Sections */
+        /* ================= BRANDS ================= */
 
-        section {
-            padding: 80px 8%;
+        .section {
+            padding: 70px 7%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 35px;
+            font-size: 38px;
             margin-bottom: 15px;
         }
 
-        .section-description {
+        .section-subtitle {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 45px;
             color: #666;
+            margin-bottom: 40px;
         }
 
-        /* Courses */
-
-        .courses {
+        .brands {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(150px, 1fr));
+
+            gap: 20px;
         }
 
-        .course-card {
+        .brand-button {
+            border: none;
             background: white;
-            padding: 30px;
+            padding: 25px 15px;
             border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
             transition: 0.3s;
         }
 
-        .course-card:hover {
+        .brand-button:hover {
+            transform: translateY(-5px);
+            background: #111;
+            color: white;
+        }
+
+        .brand-button.active {
+            background: #e63946;
+            color: white;
+        }
+
+        /* ================= SHOP ================= */
+
+        .shop {
+            background: #eeeeee;
+        }
+
+        .shop-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        #searchBox {
+            width: 350px;
+            max-width: 90%;
+
+            padding: 14px 18px;
+
+            border: 1px solid #ccc;
+            border-radius: 8px;
+
+            font-size: 16px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 30px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .product:hover {
             transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.15);
         }
 
-        .course-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
+        .product-image {
+            width: 100%;
+            height: 280px;
+
+            object-fit: contain;
+
+            background: #fafafa;
+
+            padding: 20px;
         }
 
-        .course-card h3 {
-            margin-bottom: 10px;
+        .product-content {
+            padding: 22px;
         }
 
-        /* About */
+        .brand-name {
+            color: #e63946;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .product h3 {
+            margin: 8px 0;
+            font-size: 21px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 45px;
+        }
+
+        .price {
+            font-size: 23px;
+            font-weight: bold;
+            margin: 18px 0;
+        }
+
+        .view-button {
+            width: 100%;
+            padding: 12px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #111;
+            color: white;
+
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .view-button:hover {
+            background: #e63946;
+        }
+
+        /* ================= ABOUT ================= */
 
         .about {
             background: white;
+            text-align: center;
         }
 
-        .about-content {
-            max-width: 900px;
+        .about-text {
+            max-width: 800px;
             margin: auto;
-            text-align: center;
+
+            color: #555;
+            line-height: 1.8;
         }
 
-        .about-content p {
-            margin-bottom: 15px;
-        }
-
-        /* Why us */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .feature {
-            background: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Contact */
+        /* ================= CONTACT ================= */
 
         .contact {
-            background: #e0f2fe;
-        }
-
-        .contact-box {
-            max-width: 700px;
-            margin: auto;
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-        }
-
-        .contact-box p {
-            margin: 12px;
-            font-size: 18px;
-        }
-
-        /* Footer */
-
-        footer {
-            background: #111827;
+            background: #111;
             color: white;
             text-align: center;
+        }
+
+        .contact p {
+            margin: 10px;
+            color: #ddd;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+
+            padding: 14px 25px;
+
+            background: #e63946;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #080808;
+            color: #aaa;
+
+            text-align: center;
+
             padding: 25px;
         }
 
-        /* Mobile */
+        /* ================= MODAL ================= */
 
-        @media (max-width: 700px) {
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.8);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+
+            max-width: 600px;
+            width: 100%;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            position: relative;
+
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            position: absolute;
+
+            top: 15px;
+            right: 20px;
+
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+
+            object-fit: contain;
+
+            background: #f5f5f5;
+
+            border-radius: 10px;
+
+            margin-bottom: 20px;
+        }
+
+        .modal h2 {
+            margin-bottom: 10px;
+        }
+
+        .modal-price {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #e63946;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 700px) {
 
             nav {
                 flex-direction: column;
@@ -233,293 +424,694 @@
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 40px;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
             }
+
+            #searchBox {
+                width: 100%;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
 
-    <nav>
+<!-- ================= NAVIGATION ================= -->
 
-        <div class="logo">
-            Learn With <span>Pro</span>
-        </div>
+<nav>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <div class="logo">
+        Guitar<span>Hub</span>
+    </div>
 
-    </nav>
+    <ul>
 
+        <li>
+            <a href="#home">Home</a>
+        </li>
 
-    <!-- Home -->
+        <li>
+            <a href="#brands">Brands</a>
+        </li>
 
-    <section class="hero" id="home">
+        <li>
+            <a href="#shop">Shop</a>
+        </li>
 
-        <div>
+        <li>
+            <a href="#about">About</a>
+        </li>
 
-            <h1>
-                Welcome to <span>Learn With Pro</span>
-            </h1>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
 
-            <p>
-                Empowering students with practical technology skills
-                for the digital future.
-            </p>
+    </ul>
 
-            <a href="#courses" class="button">
-                Explore Our Courses
-            </a>
+</nav>
 
-        </div>
 
-    </section>
+<!-- ================= HERO ================= -->
 
+<section class="hero" id="home">
 
-    <!-- Courses -->
+    <div>
 
-    <section id="courses">
-
-        <h2 class="section-title">
-            Our Courses
-        </h2>
-
-        <p class="section-description">
-            Learn practical and modern technology skills
-            with courses designed for beginners and aspiring professionals.
-        </p>
-
-
-        <div class="courses">
-
-            <div class="course-card">
-
-                <div class="course-icon">💻</div>
-
-                <h3>Web Development</h3>
-
-                <p>
-                    Learn HTML, CSS, JavaScript and modern
-                    web development.
-                </p>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-icon">🎨</div>
-
-                <h3>UI/UX Design</h3>
-
-                <p>
-                    Learn how to design beautiful and
-                    user-friendly digital experiences.
-                </p>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-icon">🤖</div>
-
-                <h3>AI / Machine Learning</h3>
-
-                <p>
-                    Explore artificial intelligence,
-                    machine learning and data-driven technology.
-                </p>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-icon">🎮</div>
-
-                <h3>Game Development</h3>
-
-                <p>
-                    Learn the fundamentals of creating
-                    interactive games.
-                </p>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-icon">⌨️</div>
-
-                <h3>Basic Programming</h3>
-
-                <p>
-                    Start your programming journey with
-                    fundamental programming concepts.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- About -->
-
-    <section class="about" id="about">
-
-        <div class="about-content">
-
-            <h2 class="section-title">
-                About Learn With Pro
-            </h2>
-
-            <p>
-                Learn With Pro is an educational organization
-                focused on helping students develop practical
-                technology skills.
-            </p>
-
-            <p>
-                Our goal is to make technology education
-                accessible, practical and engaging for learners.
-            </p>
-
-            <p>
-                We believe in learning by doing, building real
-                projects and developing skills that can be used
-                in the real world.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Why Choose Us -->
-
-    <section id="why-us">
-
-        <h2 class="section-title">
-            Why Choose Learn With Pro?
-        </h2>
-
-        <p class="section-description">
-            We focus on practical learning and real-world skills.
-        </p>
-
-
-        <div class="features">
-
-            <div class="feature">
-
-                <h3>🎓 Practical Learning</h3>
-
-                <p>
-                    Learn through projects and hands-on activities.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <h3>💡 Modern Skills</h3>
-
-                <p>
-                    Learn technologies that are relevant
-                    to today's digital world.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <h3>🚀 Career Focused</h3>
-
-                <p>
-                    Build skills that can help you grow
-                    academically and professionally.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <h3>🤝 Supportive Environment</h3>
-
-                <p>
-                    Learn in an environment where questions
-                    and creativity are encouraged.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact -->
-
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">
-            Contact Us
-        </h2>
-
-        <div class="contact-box">
-
-            <p>
-                📍 <strong>Location:</strong>
-                Khairahani, Parsa
-            </p>
-
-            <p>
-                📧 <strong>Email:</strong>
-                learnwithpro67@gmail.com
-            </p>
-
-            <a
-                href="mailto:learnwithpro67@gmail.com"
-                class="button">
-                Send Us an Email
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
+        <h1>
+            Find Your <span>Perfect Guitar</span>
+        </h1>
 
         <p>
-            © 2026 Learn With Pro. All Rights Reserved.
+            Explore guitars from some of the world's
+            most respected guitar companies.
         </p>
 
-        <p>
-            Learn • Build • Grow
+        <a
+            href="#brands"
+            class="hero-button">
+
+            Explore Guitars
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BRANDS ================= -->
+
+<section class="section" id="brands">
+
+    <h2 class="section-title">
+        Guitar Brands
+    </h2>
+
+    <p class="section-subtitle">
+        Choose a guitar company to explore its guitars.
+    </p>
+
+
+    <div class="brands">
+
+        <button
+            class="brand-button active"
+            onclick="filterBrand('All', this)">
+
+            All
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('Gibson', this)">
+
+            Gibson
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('Fender', this)">
+
+            Fender
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('Ibanez', this)">
+
+            Ibanez
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('Yamaha', this)">
+
+            Yamaha
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('PRS', this)">
+
+            PRS
+
+        </button>
+
+
+        <button
+            class="brand-button"
+            onclick="filterBrand('Epiphone', this)">
+
+            Epiphone
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="section shop" id="shop">
+
+    <h2 class="section-title">
+        Guitar Collection
+    </h2>
+
+    <p class="section-subtitle">
+        Browse our collection and find your next guitar.
+    </p>
+
+
+    <div class="shop-controls">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search guitar name..."
+            onkeyup="searchProducts()">
+
+    </div>
+
+
+    <div
+        class="products"
+        id="productContainer">
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+    <h2 class="section-title">
+        About GuitarHub
+    </h2>
+
+    <p class="about-text">
+
+        GuitarHub is a guitar marketplace concept
+        designed for guitar players who want to
+        discover instruments from leading brands.
+
+        Browse different guitar companies,
+        compare models, view prices and find
+        the instrument that fits your style.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact" id="contact">
+
+    <h2 class="section-title">
+        Contact GuitarHub
+    </h2>
+
+    <p>
+        📍 Khairahani, Parsa
+    </p>
+
+    <p>
+        📧 learnwithpro67@gmail.com
+    </p>
+
+    <a
+        class="contact-button"
+        href="mailto:learnwithpro67@gmail.com">
+
+        Contact Us
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 GuitarHub. All Rights Reserved.
+    </p>
+
+    <p>
+        Built for guitar lovers 🎸
+    </p>
+
+</footer>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div
+    class="modal"
+    id="productModal">
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </span>
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Guitar">
+
+        <h2 id="modalName">
+        </h2>
+
+        <p id="modalBrand">
         </p>
 
-    </footer>
+        <p
+            id="modalPrice"
+            class="modal-price">
+
+        </p>
+
+        <p id="modalDescription">
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+/* ================= GUITAR DATA ================= */
+
+const guitars = [
+
+    {
+        brand: "Gibson",
+
+        name: "Gibson Les Paul Standard 50s P90",
+
+        price: "€2,499",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/462508.jpg",
+
+        description:
+        "Gold Top Les Paul Standard 50s with P-90 pickups, mahogany body and maple top."
+    },
+
+
+    {
+        brand: "Gibson",
+
+        name: "Gibson SG Standard EB",
+
+        price: "€1,549",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/462537.jpg",
+
+        description:
+        "Classic ebony Gibson SG Standard with mahogany body and dual humbuckers."
+    },
+
+
+    {
+        brand: "Fender",
+
+        name: "Fender Player II Strat RW TCB",
+
+        price: "€829",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595242.jpg",
+
+        description:
+        "Player II Stratocaster with rosewood fingerboard and Transparent Cherry Burst finish."
+    },
+
+
+    {
+        brand: "Fender",
+
+        name: "Fender Player II Strat HSS MN ACB",
+
+        price: "€888",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595298.jpg",
+
+        description:
+        "Player II Strat HSS with maple fingerboard and versatile HSS pickup configuration."
+    },
+
+
+    {
+        brand: "Fender",
+
+        name: "Fender Player II Tele MN 3TS",
+
+        price: "€822",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/595335.jpg",
+
+        description:
+        "Player II Telecaster in 3-Color Sunburst with maple fingerboard."
+    },
+
+
+    {
+        brand: "Ibanez",
+
+        name: "Ibanez RG550-EB",
+
+        price: "€1,090",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/597454.jpg",
+
+        description:
+        "RG550 electric guitar with basswood body, maple/walnut neck and Edge tremolo."
+    },
+
+
+    {
+        brand: "Yamaha",
+
+        name: "Yamaha Pacifica 012",
+
+        price: "SGD 256",
+
+        image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha-Pacifica-012.jpg",
+
+        description:
+        "Affordable Pacifica electric guitar designed as an accessible entry-level instrument."
+    },
+
+
+    {
+        brand: "PRS",
+
+        name: "PRS Custom 24 Faded Whale Blue",
+
+        price: "€4,199",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/634905.jpg",
+
+        description:
+        "Premium PRS Custom 24 with mahogany body, flamed maple top and dual humbuckers."
+    },
+
+
+    {
+        brand: "Epiphone",
+
+        name: "Epiphone Les Paul Standard 50s Goldtop",
+
+        price: "€659",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/632459.jpg",
+
+        description:
+        "Inspired by Gibson Les Paul design with mahogany body, maple top and ProBucker pickups."
+    },
+
+
+    {
+        brand: "Epiphone",
+
+        name: "Epiphone SG Standard Cherry",
+
+        price: "€599",
+
+        image:
+        "https://thumbs.static-thomann.de/thumb//bdbmagic/pics/prod/634462.jpg",
+
+        description:
+        "Cherry-finished SG-style guitar with mahogany construction and ProBucker pickups."
+    }
+
+];
+
+
+/* ================= DISPLAY PRODUCTS ================= */
+
+function displayProducts(list) {
+
+    const container =
+        document.getElementById("productContainer");
+
+    container.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        container.innerHTML = `
+            <p style="
+                grid-column: 1 / -1;
+                text-align:center;
+                font-size:20px;
+                padding:40px;">
+                
+                No guitars found.
+
+            </p>
+        `;
+
+        return;
+    }
+
+
+    list.forEach((guitar, index) => {
+
+        container.innerHTML += `
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="${guitar.image}"
+                    alt="${guitar.name}">
+
+                <div class="product-content">
+
+                    <div class="brand-name">
+                        ${guitar.brand}
+                    </div>
+
+                    <h3>
+                        ${guitar.name}
+                    </h3>
+
+                    <p class="description">
+                        ${guitar.description}
+                    </p>
+
+                    <div class="price">
+                        ${guitar.price}
+                    </div>
+
+                    <button
+                        class="view-button"
+                        onclick="openModal(${index})">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ================= BRAND FILTER ================= */
+
+function filterBrand(brand, button) {
+
+    document
+        .querySelectorAll(".brand-button")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    if (brand === "All") {
+
+        displayProducts(guitars);
+
+    }
+
+    else {
+
+        const filtered =
+            guitars.filter(
+                guitar => guitar.brand === brand
+            );
+
+        displayProducts(filtered);
+
+    }
+
+
+    document
+        .getElementById("shop")
+        .scrollIntoView();
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchProducts() {
+
+    const search =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase();
+
+
+    const results =
+        guitars.filter(guitar =>
+
+            guitar.name
+            .toLowerCase()
+            .includes(search)
+
+            ||
+
+            guitar.brand
+            .toLowerCase()
+            .includes(search)
+
+        );
+
+
+    displayProducts(results);
+
+}
+
+
+/* ================= MODAL ================= */
+
+function openModal(index) {
+
+    const guitar =
+        guitars[index];
+
+
+    document
+        .getElementById("modalImage")
+        .src = guitar.image;
+
+
+    document
+        .getElementById("modalName")
+        .textContent = guitar.name;
+
+
+    document
+        .getElementById("modalBrand")
+        .textContent =
+        "Brand: " + guitar.brand;
+
+
+    document
+        .getElementById("modalPrice")
+        .textContent =
+        guitar.price;
+
+
+    document
+        .getElementById("modalDescription")
+        .textContent =
+        guitar.description;
+
+
+    document
+        .getElementById("productModal")
+        .style.display = "flex";
+
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById("productModal")
+        .style.display = "none";
+
+}
+
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById("productModal");
+
+
+    if (event.target === modal) {
+
+        closeModal();
+
+    }
+
+}
+
+
+/* ================= INITIAL LOAD ================= */
+
+displayProducts(guitars);
+
+
+</script>
+
 
 </body>
 
